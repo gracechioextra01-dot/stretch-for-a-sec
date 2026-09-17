@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f1e8" />
+    <title>Stretch for a SEC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Stretch for a SEC home">
+          <span class="brand-mark">S</span>
+          <span>Stretch for a SEC</span>
+        </a>
+        <span class="privacy-pill">On-device camera</span>
+      </header>
+
+      <section class="intro">
+        <div>
+          <p class="eyebrow">SAFELY · EFFECTIVELY · CONSISTENTLY</p>
+          <h1>A small stretch.<br />A clearer moment.</h1>
+          <p class="intro-copy">Choose a movement, step into frame, and receive gentle posture guidance in real time.</p>
+        </div>
+        <div class="session-card">
+          <span>Session goal</span>
+          <strong><span id="completedCount">0</span> / 3 stretches</strong>
+          <div class="progress-track"><div id="sessionProgress"></div></div>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="camera-card">
+          <div class="camera-stage" id="cameraStage">
+            <video id="video" playsinline muted></video>
+            <canvas id="outputCanvas"></canvas>
+            <div class="camera-placeholder" id="cameraPlaceholder">
+              <div class="figure-icon" aria-hidden="true">◎</div>
+              <h2>Ready when you are</h2>
+              <p>Place your device where your full body can be seen.</p>
+              <button id="startButton" class="primary-button">Enable camera</button>
+              <small>Video is processed on this device and is never saved.</small>
+            </div>
+            <div class="status-chip" id="statusChip" hidden>Finding your pose…</div>
+          </div>
+
+          <div class="feedback-bar" aria-live="polite">
+            <div class="feedback-icon" id="feedbackIcon">↗</div>
+            <div>
+              <span>Live guidance</span>
+              <strong id="feedbackText">Enable the camera to begin.</strong>
+            </div>
+          </div>
+        </div>
+
+        <aside class="coach-panel">
+          <div class="coach-heading">
+            <div>
+              <p class="eyebrow">TODAY'S QUICK RESET</p>
+              <h2 id="stretchTitle">Overhead reach</h2>
+            </div>
+            <div class="hold-ring" id="holdRing"><span id="holdValue">0</span><small>sec</small></div>
+          </div>
+
+          <p id="stretchInstruction" class="instruction">Stand tall and lift both arms above your head. Keep your shoulders relaxed.</p>
+
+          <div class="tips">
+            <div><span>1</span><p>Keep your whole body visible.</p></div>
+            <div><span>2</span><p>Move slowly and stop if anything hurts.</p></div>
+          </div>
+
+          <div class="stretch-list" role="list" aria-label="Stretch selection">
+            <button class="stretch-option active" data-stretch="overhead">
+              <span class="option-number">01</span><span><strong>Overhead reach</strong><small>Upper body · 10 sec</small></span><span class="check">✓</span>
+            </button>
+            <button class="stretch-option" data-stretch="side">
+              <span class="option-number">02</span><span><strong>Side stretch</strong><small>Torso · 10 sec</small></span><span class="check">✓</span>
+            </button>
+            <button class="stretch-option" data-stretch="bend">
+              <span class="option-number">03</span><span><strong>Forward fold</strong><small>Back body · 10 sec</small></span><span class="check">✓</span>
+            </button>
+          </div>
+        </aside>
+      </section>
+
+      <footer>Prototype guidance only — not medical advice. Move within a comfortable range.</footer>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
